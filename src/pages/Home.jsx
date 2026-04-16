@@ -2,12 +2,27 @@ import { useNavigate } from 'react-router-dom'
 import heroBg from '../assets/hero.jpg'
 import beatsImg from '../assets/beatsimg.jpg'
 
-const latestBeats = [
+// ========================================
+// 🎵 UPDATE THESE EVERY WEEK — EASY!
+// ========================================
+const BEAT_OF_THE_WEEK = {
+  name: "Im Certain",
+  bpm: "80",
+  key: "D# Minor",
+  genre: "R&B",
+  description: "A dark, atmospheric R&B record built for late-night sessions. Room for your voice to breathe.",
+  gumroadUrl: "https://vanegasbooking.gumroad.com/l/mxnbth",
+  previewIndex: 0,
+  price: "$20"
+}
+
+const LATEST_RELEASES = [
   { name: "Im Certain", index: 0 },
   { name: "Come Over Foreva", index: 1 },
   { name: "Stripped Away", index: 2 },
   { name: "If I Dont", index: 3 },
 ]
+// ========================================
 
 export default function Home() {
   const navigate = useNavigate()
@@ -75,18 +90,18 @@ export default function Home() {
         <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:'2rem',alignItems:'center',background:'#f5f2ed',borderRadius:'4px',padding:'2rem',border:'0.5px solid rgba(15,15,15,0.08)'}}>
           <div>
             <div style={{display:'inline-block',fontSize:'0.65rem',letterSpacing:'0.14em',textTransform:'uppercase',padding:'0.3rem 0.75rem',background:'#b8933f',color:'#fff',borderRadius:'1px',marginBottom:'1rem',fontWeight:500}}>Most Popular</div>
-            <h3 style={{fontSize:'1.6rem',fontWeight:600,marginBottom:'0.4rem'}}>Im Certain</h3>
+            <h3 style={{fontSize:'1.6rem',fontWeight:600,marginBottom:'0.4rem'}}>{BEAT_OF_THE_WEEK.name}</h3>
             <div style={{display:'flex',gap:'0.75rem',marginBottom:'1rem',flexWrap:'wrap'}}>
-              <span style={{fontSize:'0.72rem',color:'rgba(15,15,15,0.5)'}}>80 BPM</span>
+              <span style={{fontSize:'0.72rem',color:'rgba(15,15,15,0.5)'}}>{BEAT_OF_THE_WEEK.bpm} BPM</span>
               <span style={{fontSize:'0.72rem',color:'rgba(15,15,15,0.5)'}}>·</span>
-              <span style={{fontSize:'0.72rem',color:'rgba(15,15,15,0.5)'}}>D# Minor</span>
+              <span style={{fontSize:'0.72rem',color:'rgba(15,15,15,0.5)'}}>{BEAT_OF_THE_WEEK.key}</span>
               <span style={{fontSize:'0.72rem',color:'rgba(15,15,15,0.5)'}}>·</span>
-              <span style={{fontSize:'0.72rem',color:'rgba(15,15,15,0.5)'}}>R&B</span>
+              <span style={{fontSize:'0.72rem',color:'rgba(15,15,15,0.5)'}}>{BEAT_OF_THE_WEEK.genre}</span>
             </div>
-            <p style={{fontSize:'0.85rem',color:'rgba(15,15,15,0.55)',lineHeight:1.65,marginBottom:'1.5rem'}}>A dark, atmospheric R&B record built for late-night sessions. Room for your voice to breathe.</p>
+            <p style={{fontSize:'0.85rem',color:'rgba(15,15,15,0.55)',lineHeight:1.65,marginBottom:'1.5rem'}}>{BEAT_OF_THE_WEEK.description}</p>
             <div style={{display:'flex',gap:'0.75rem',flexWrap:'wrap'}}>
-              <a href="https://vanegasbooking.gumroad.com/l/mxnbth" data-gumroad-single-product="true" style={{padding:'0.75rem 1.75rem',background:'#0f0f0f',color:'#f5f2ed',fontSize:'0.78rem',letterSpacing:'0.1em',textTransform:'uppercase',borderRadius:'2px',textDecoration:'none',fontWeight:600}}>Buy Now — $20</a>
-              <button onClick={() => navigate('/beats?play=0')} style={{padding:'0.75rem 1.5rem',background:'transparent',color:'#0f0f0f',fontSize:'0.78rem',letterSpacing:'0.1em',textTransform:'uppercase',border:'0.5px solid rgba(15,15,15,0.25)',borderRadius:'2px',cursor:'pointer'}}>Preview</button>
+              <a href={BEAT_OF_THE_WEEK.gumroadUrl} data-gumroad-single-product="true" style={{padding:'0.75rem 1.75rem',background:'#0f0f0f',color:'#f5f2ed',fontSize:'0.78rem',letterSpacing:'0.1em',textTransform:'uppercase',borderRadius:'2px',textDecoration:'none',fontWeight:600}}>Buy Now — {BEAT_OF_THE_WEEK.price}</a>
+              <button onClick={() => navigate(`/beats?play=${BEAT_OF_THE_WEEK.previewIndex}`)} style={{padding:'0.75rem 1.5rem',background:'transparent',color:'#0f0f0f',fontSize:'0.78rem',letterSpacing:'0.1em',textTransform:'uppercase',border:'0.5px solid rgba(15,15,15,0.25)',borderRadius:'2px',cursor:'pointer'}}>Preview</button>
             </div>
           </div>
           <div style={{borderRadius:'4px',aspectRatio:'1',backgroundImage:`url(${beatsImg})`,backgroundSize:'cover',backgroundPosition:'center',position:'relative'}}>
@@ -102,7 +117,7 @@ export default function Home() {
         <div style={{fontSize:'0.7rem',letterSpacing:'0.22em',textTransform:'uppercase',color:'#b8933f',marginBottom:'0.75rem'}}>Catalog</div>
         <h2 style={{fontSize:'clamp(1.4rem,2.5vw,1.8rem)',fontWeight:600,letterSpacing:'-0.015em',marginBottom:'2rem'}}>Latest releases</h2>
         <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(200px,1fr))',gap:'1.5rem'}}>
-          {latestBeats.map((b,i) => (
+          {LATEST_RELEASES.map((b,i) => (
             <div key={i}
               onClick={() => navigate(`/beats?play=${b.index}`)}
               style={{background:'#f5f2ed',borderRadius:'4px',overflow:'hidden',border:'0.5px solid rgba(15,15,15,0.08)',cursor:'pointer',transition:'transform 0.2s'}}
