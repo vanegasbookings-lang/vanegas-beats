@@ -86,8 +86,29 @@ export default function Beats() {
 
   return (
     <main style={{background:'#f5f2ed',minHeight:'100vh',color:'#0f0f0f',fontFamily:"'Space Grotesk', sans-serif",padding:'6rem 2.5rem'}}>
-      <div style={{fontSize:'0.7rem',letterSpacing:'0.22em',textTransform:'uppercase',color:'#b8933f',marginBottom:'0.75rem'}}>Catalog</div>
-      <h1 style={{fontSize:'clamp(1.6rem,3vw,2.2rem)',fontWeight:600,letterSpacing:'-0.015em',marginBottom:'3rem'}}>Browse beats</h1>
+      
+      <div style={{display:'flex',justifyContent:'space-between',alignItems:'flex-end',marginBottom:'1rem',flexWrap:'wrap',gap:'1rem'}}>
+        <div>
+          <div style={{fontSize:'0.7rem',letterSpacing:'0.22em',textTransform:'uppercase',color:'#b8933f',marginBottom:'0.5rem'}}>Catalog</div>
+          <h1 style={{fontSize:'clamp(1.6rem,3vw,2.2rem)',fontWeight:600,letterSpacing:'-0.015em'}}>Browse beats</h1>
+        </div>
+        <div style={{display:'flex',gap:'1.5rem',flexWrap:'wrap'}}>
+          <div style={{display:'flex',alignItems:'center',gap:'0.4rem',fontSize:'0.72rem',color:'rgba(15,15,15,0.6)',fontWeight:500}}>
+            <span>⚡</span> Instant delivery
+          </div>
+          <div style={{display:'flex',alignItems:'center',gap:'0.4rem',fontSize:'0.72rem',color:'rgba(15,15,15,0.6)',fontWeight:500}}>
+            <span>🔒</span> Secure checkout
+          </div>
+          <div style={{display:'flex',alignItems:'center',gap:'0.4rem',fontSize:'0.72rem',color:'rgba(15,15,15,0.6)',fontWeight:500}}>
+            <span>🔄</span> Always in motion
+          </div>
+        </div>
+      </div>
+
+      <div style={{padding:'0.75rem 1rem',background:'rgba(184,147,63,0.08)',border:'0.5px solid rgba(184,147,63,0.25)',borderRadius:'2px',marginBottom:'2.5rem',display:'flex',alignItems:'center',gap:'0.5rem'}}>
+        <span style={{fontSize:'0.72rem',color:'#b8933f',fontWeight:600}}>🎧 Press play on any beat to preview before you buy. Full tagged versions available.</span>
+      </div>
+
       <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(290px,1fr))',gap:'1px',border:'0.5px solid rgba(15,15,15,0.1)'}}>
         {beats.map((b,i) => {
           const isHovered = hovered === i
@@ -136,12 +157,30 @@ export default function Beats() {
                     </div>
                   ))}
                 </div>
-                <a href={b.url} data-gumroad-single-product="true" style={{display:'block',width:'100%',padding:'0.65rem',background: isHovered ? '#0f0f0f' : '#b8933f',color:'#f5f2ed',borderRadius:'2px',fontSize:'0.72rem',letterSpacing:'0.1em',textTransform:'uppercase',cursor:'pointer',fontWeight:500,transition:'background 0.3s',textAlign:'center',textDecoration:'none'}}>Buy Now</a>
+                <a href={b.url} data-gumroad-single-product="true" style={{display:'block',width:'100%',padding:'0.65rem',background: isHovered ? '#0f0f0f' : '#b8933f',color:'#f5f2ed',borderRadius:'2px',fontSize:'0.72rem',letterSpacing:'0.1em',textTransform:'uppercase',cursor:'pointer',fontWeight:600,transition:'background 0.3s',textAlign:'center',textDecoration:'none'}}>
+                  Get This Beat ⚡
+                </a>
               </div>
             </div>
           )
         })}
       </div>
+
+      <div style={{marginTop:'3rem',padding:'1.5rem',background:'#edeae4',borderRadius:'4px',border:'0.5px solid rgba(15,15,15,0.08)',display:'flex',justifyContent:'center',gap:'3rem',flexWrap:'wrap',textAlign:'center'}}>
+        <div>
+          <div style={{fontSize:'0.78rem',fontWeight:600,marginBottom:'0.2rem'}}>⚡ Instant Delivery</div>
+          <div style={{fontSize:'0.68rem',color:'rgba(15,15,15,0.5)'}}>Files sent to your email immediately</div>
+        </div>
+        <div>
+          <div style={{fontSize:'0.78rem',fontWeight:600,marginBottom:'0.2rem'}}>🔒 Secure Checkout</div>
+          <div style={{fontSize:'0.68rem',color:'rgba(15,15,15,0.5)'}}>Powered by Gumroad</div>
+        </div>
+        <div>
+          <div style={{fontSize:'0.78rem',fontWeight:600,marginBottom:'0.2rem'}}>📄 Clear Licensing</div>
+          <div style={{fontSize:'0.68rem',color:'rgba(15,15,15,0.5)'}}>Simple terms, no hidden fees</div>
+        </div>
+      </div>
+
     </main>
   )
 }
