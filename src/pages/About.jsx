@@ -1,3 +1,5 @@
+import ppImage from '../assets/pp.jpeg'
+
 export default function About() {
   return (
     <main style={{background:'#f5f2ed',minHeight:'100vh',color:'#0f0f0f',fontFamily:"'Space Grotesk', sans-serif"}}>
@@ -6,15 +8,10 @@ export default function About() {
         <div style={{position:'relative'}}>
           <div style={{width:'100%',aspectRatio:'3/4',background:'#ddd8d0',borderRadius:'4px',overflow:'hidden',border:'0.5px solid rgba(15,15,15,0.08)'}}>
             <img 
-              src="/src/assets/pp.jpeg" 
+              src={ppImage}
               alt="Vanegas" 
               style={{width:'100%',height:'100%',objectFit:'cover'}}
-              onError={e => { e.target.style.display='none' }}
             />
-            <div style={{position:'absolute',inset:0,display:'flex',alignItems:'center',justifyContent:'center',flexDirection:'column',gap:'0.5rem'}}>
-              <div style={{fontFamily:"'Acids',sans-serif",fontSize:'4rem',color:'rgba(15,15,15,0.12)'}}>V</div>
-              
-            </div>
           </div>
           <div style={{position:'absolute',bottom:'-1rem',right:'-1rem',width:'60%',height:'60%',border:'2px solid #b8933f',borderRadius:'4px',zIndex:-1}}></div>
         </div>
