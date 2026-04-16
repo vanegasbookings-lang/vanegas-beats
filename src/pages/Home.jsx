@@ -36,8 +36,8 @@ export default function Home() {
           <p style={{fontSize:'1.05rem',fontWeight:500,color:'#0f0f0f',marginBottom:'0.5rem',maxWidth:'480px'}}>Premium Multi-Genre Beats · Instant Delivery</p>
           <p style={{fontSize:'0.9rem',color:'rgba(15,15,15,0.65)',lineHeight:1.65,maxWidth:'420px',marginBottom:'2rem'}}>Global sound. Local feel. Made to move everywhere.</p>
           <div style={{display:'flex',gap:'0.75rem',flexWrap:'wrap'}}>
-            <a href="/beats" style={{padding:'0.9rem 2.2rem',background:'#0f0f0f',color:'#f5f2ed',fontSize:'0.82rem',letterSpacing:'0.1em',textTransform:'uppercase',borderRadius:'2px',textDecoration:'none',fontWeight:600}}>Get Beats Now</a>
-            <a href="/contact" style={{padding:'0.9rem 2rem',background:'transparent',color:'#0f0f0f',fontSize:'0.82rem',letterSpacing:'0.1em',textTransform:'uppercase',border:'0.5px solid rgba(15,15,15,0.3)',borderRadius:'2px',textDecoration:'none'}}>Custom Work</a>
+            <button onClick={() => navigate('/beats')} style={{padding:'0.9rem 2.2rem',background:'#0f0f0f',color:'#f5f2ed',fontSize:'0.82rem',letterSpacing:'0.1em',textTransform:'uppercase',borderRadius:'2px',border:'none',cursor:'pointer',fontWeight:600}}>Get Beats Now</button>
+            <button onClick={() => navigate('/contact')} style={{padding:'0.9rem 2rem',background:'transparent',color:'#0f0f0f',fontSize:'0.82rem',letterSpacing:'0.1em',textTransform:'uppercase',border:'0.5px solid rgba(15,15,15,0.3)',borderRadius:'2px',cursor:'pointer'}}>Custom Work</button>
           </div>
         </div>
         <div style={{position:'absolute',right:'-2rem',top:'50%',transform:'translateY(-50%)',fontSize:'clamp(8rem,22vw,18rem)',fontWeight:700,color:'rgba(15,15,15,0.04)',letterSpacing:'-0.04em',pointerEvents:'none',userSelect:'none',zIndex:0}}>V</div>
