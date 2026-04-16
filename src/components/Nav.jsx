@@ -7,7 +7,7 @@ export default function Nav() {
 
   return (
     <>
-      <nav style={{position:'sticky',top:0,zIndex:100,display:'flex',alignItems:'center',justifyContent:'space-between',padding:'1.2rem 2.5rem',background:'rgba(245,242,237,0.97)',borderBottom:'0.5px solid rgba(15,15,15,0.12)',backdropFilter:'blur(12px)'}}>
+      <nav style={{position:'fixed',top:0,left:0,right:0,zIndex:100,display:'flex',alignItems:'center',justifyContent:'space-between',padding:'1.2rem 2.5rem',background:'rgba(245,242,237,0.97)',borderBottom:'0.5px solid rgba(15,15,15,0.12)',backdropFilter:'blur(12px)'}}>
         <Link to="/" style={{fontFamily:"'Acids', sans-serif",fontSize:'1.8rem',color:'#0f0f0f',textDecoration:'none',letterSpacing:'0.05em',outline:'none'}}>Beats by Vanegas</Link>
         <div style={{display:'flex',alignItems:'center',gap:'1.5rem'}}>
           <div className="desktop-nav" style={{display:'flex',gap:'2rem'}}>
@@ -39,6 +39,8 @@ export default function Nav() {
           </button>
         </div>
       </nav>
+
+      <div style={{height:'72px'}}></div>
 
       <div style={{
         position:'fixed',
