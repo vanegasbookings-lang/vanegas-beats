@@ -86,7 +86,7 @@ export default function Beats() {
 
   return (
     <main style={{background:'#f5f2ed',minHeight:'100vh',color:'#0f0f0f',fontFamily:"'Space Grotesk', sans-serif",padding:'6rem 2.5rem'}}>
-      
+
       <div style={{display:'flex',justifyContent:'space-between',alignItems:'flex-end',marginBottom:'1rem',flexWrap:'wrap',gap:'1rem'}}>
         <div>
           <div style={{fontSize:'0.7rem',letterSpacing:'0.22em',textTransform:'uppercase',color:'#b8933f',marginBottom:'0.5rem'}}>Catalog</div>
@@ -178,6 +178,16 @@ export default function Beats() {
         <div>
           <div style={{fontSize:'0.78rem',fontWeight:600,marginBottom:'0.2rem'}}>📄 Clear Licensing</div>
           <div style={{fontSize:'0.68rem',color:'rgba(15,15,15,0.5)'}}>Simple terms, no hidden fees</div>
+        </div>
+      </div>
+
+      <div style={{marginTop:'2rem',padding:'1.5rem',background:'#0f0f0f',borderRadius:'4px',display:'flex',justifyContent:'center',alignItems:'center',gap:'1rem',flexWrap:'wrap'}}>
+        <span style={{fontSize:'0.72rem',color:'rgba(245,242,237,0.4)',letterSpacing:'0.1em',textTransform:'uppercase'}}>Follow</span>
+        <div style={{display:'flex',gap:'0.75rem',flexWrap:'wrap',justifyContent:'center'}}>
+          <a href="https://instagram.com/vanegas.808" target="_blank" style={{padding:'0.5rem 1.1rem',background:'rgba(245,242,237,0.08)',color:'#f5f2ed',borderRadius:'2px',textDecoration:'none',fontSize:'0.75rem',fontWeight:500,letterSpacing:'0.06em',border:'0.5px solid rgba(245,242,237,0.1)'}}>Instagram</a>
+          <a href="https://tiktok.com/@vanegas_ofc" target="_blank" style={{padding:'0.5rem 1.1rem',background:'rgba(245,242,237,0.08)',color:'#f5f2ed',borderRadius:'2px',textDecoration:'none',fontSize:'0.75rem',fontWeight:500,letterSpacing:'0.06em',border:'0.5px solid rgba(245,242,237,0.1)'}}>TikTok</a>
+          <a href="https://open.spotify.com/intl-es/artist/2RpdkM7b5jUJHB9XQcxYgD" target="_blank" style={{padding:'0.5rem 1.1rem',background:'#1DB954',color:'#fff',borderRadius:'2px',textDecoration:'none',fontSize:'0.75rem',fontWeight:500,letterSpacing:'0.06em'}}>Spotify</a>
+          <a href="https://soundcloud.com/vanegas-617664564" target="_blank" style={{padding:'0.5rem 1.1rem',background:'#ff5500',color:'#fff',borderRadius:'2px',textDecoration:'none',fontSize:'0.75rem',fontWeight:500,letterSpacing:'0.06em'}}>SoundCloud</a>
         </div>
       </div>
 

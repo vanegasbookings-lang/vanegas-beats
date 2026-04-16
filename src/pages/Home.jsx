@@ -70,27 +70,42 @@ export default function Home() {
             <span style={{fontSize:'0.68rem',color:'#b8933f',letterSpacing:'0.1em',textTransform:'uppercase',fontWeight:600}}>⏳ Limited licenses available</span>
           </div>
         </div>
-        <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:'2rem',alignItems:'center',background:'#f5f2ed',borderRadius:'4px',padding:'2rem',border:'0.5px solid rgba(15,15,15,0.08)'}}>
-          <div>
-            <div style={{display:'inline-block',fontSize:'0.65rem',letterSpacing:'0.14em',textTransform:'uppercase',padding:'0.3rem 0.75rem',background:'#b8933f',color:'#fff',borderRadius:'1px',marginBottom:'1rem',fontWeight:500}}>Most Popular</div>
-            <h3 style={{fontSize:'1.6rem',fontWeight:600,marginBottom:'0.4rem'}}>{BEAT_OF_THE_WEEK.name}</h3>
-            <div style={{display:'flex',gap:'0.75rem',marginBottom:'1rem',flexWrap:'wrap'}}>
-              <span style={{fontSize:'0.72rem',color:'rgba(15,15,15,0.5)'}}>{BEAT_OF_THE_WEEK.bpm} BPM</span>
-              <span style={{fontSize:'0.72rem',color:'rgba(15,15,15,0.5)'}}>·</span>
-              <span style={{fontSize:'0.72rem',color:'rgba(15,15,15,0.5)'}}>{BEAT_OF_THE_WEEK.key}</span>
-              <span style={{fontSize:'0.72rem',color:'rgba(15,15,15,0.5)'}}>·</span>
-              <span style={{fontSize:'0.72rem',color:'rgba(15,15,15,0.5)'}}>{BEAT_OF_THE_WEEK.genre}</span>
+
+        <div style={{background:'#f5f2ed',borderRadius:'4px',padding:'2rem',border:'0.5px solid rgba(15,15,15,0.08)'}}>
+          <style>{`
+            @media (min-width: 769px) {
+              .bow-grid { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 2rem !important; align-items: center !important; }
+              .bow-image { order: 2 !important; }
+              .bow-text { order: 1 !important; }
+            }
+            @media (max-width: 768px) {
+              .bow-grid { display: flex !important; flex-direction: column !important; gap: 1.5rem !important; }
+              .bow-image { order: 1 !important; }
+              .bow-text { order: 2 !important; }
+            }
+          `}</style>
+          <div className="bow-grid">
+            <div className="bow-image" style={{borderRadius:'4px',aspectRatio:'1',backgroundImage:`url(${beatsImg})`,backgroundSize:'cover',backgroundPosition:'center',position:'relative'}}>
+              <div style={{position:'absolute',inset:0,background:'rgba(10,10,10,0.3)',borderRadius:'4px'}}></div>
+              <div style={{position:'absolute',inset:0,display:'flex',alignItems:'center',justifyContent:'center',zIndex:1}}>
+                <div style={{fontFamily:"'Acids',sans-serif",fontSize:'5rem',color:'rgba(255,255,255,0.15)'}}>V</div>
+              </div>
             </div>
-            <p style={{fontSize:'0.85rem',color:'rgba(15,15,15,0.55)',lineHeight:1.65,marginBottom:'1.5rem'}}>{BEAT_OF_THE_WEEK.description}</p>
-            <div style={{display:'flex',gap:'0.75rem',flexWrap:'wrap'}}>
-              <a href={BEAT_OF_THE_WEEK.gumroadUrl} data-gumroad-single-product="true" style={{padding:'0.75rem 1.75rem',background:'#0f0f0f',color:'#f5f2ed',fontSize:'0.78rem',letterSpacing:'0.1em',textTransform:'uppercase',borderRadius:'2px',textDecoration:'none',fontWeight:600}}>Buy Now — {BEAT_OF_THE_WEEK.price}</a>
-              <button onClick={() => navigate(`/beats?play=${BEAT_OF_THE_WEEK.previewIndex}`)} style={{padding:'0.75rem 1.5rem',background:'transparent',color:'#0f0f0f',fontSize:'0.78rem',letterSpacing:'0.1em',textTransform:'uppercase',border:'0.5px solid rgba(15,15,15,0.25)',borderRadius:'2px',cursor:'pointer'}}>Preview</button>
-            </div>
-          </div>
-          <div style={{borderRadius:'4px',aspectRatio:'1',backgroundImage:`url(${beatsImg})`,backgroundSize:'cover',backgroundPosition:'center',position:'relative'}}>
-            <div style={{position:'absolute',inset:0,background:'rgba(10,10,10,0.3)',borderRadius:'4px'}}></div>
-            <div style={{position:'absolute',inset:0,display:'flex',alignItems:'center',justifyContent:'center',zIndex:1}}>
-              <div style={{fontFamily:"'Acids',sans-serif",fontSize:'5rem',color:'rgba(255,255,255,0.15)'}}>V</div>
+            <div className="bow-text">
+              <div style={{display:'inline-block',fontSize:'0.65rem',letterSpacing:'0.14em',textTransform:'uppercase',padding:'0.3rem 0.75rem',background:'#b8933f',color:'#fff',borderRadius:'1px',marginBottom:'1rem',fontWeight:500}}>Most Popular</div>
+              <h3 style={{fontSize:'1.6rem',fontWeight:600,marginBottom:'0.4rem'}}>{BEAT_OF_THE_WEEK.name}</h3>
+              <div style={{display:'flex',gap:'0.75rem',marginBottom:'1rem',flexWrap:'wrap'}}>
+                <span style={{fontSize:'0.72rem',color:'rgba(15,15,15,0.5)'}}>{BEAT_OF_THE_WEEK.bpm} BPM</span>
+                <span style={{fontSize:'0.72rem',color:'rgba(15,15,15,0.5)'}}>·</span>
+                <span style={{fontSize:'0.72rem',color:'rgba(15,15,15,0.5)'}}>{BEAT_OF_THE_WEEK.key}</span>
+                <span style={{fontSize:'0.72rem',color:'rgba(15,15,15,0.5)'}}>·</span>
+                <span style={{fontSize:'0.72rem',color:'rgba(15,15,15,0.5)'}}>{BEAT_OF_THE_WEEK.genre}</span>
+              </div>
+              <p style={{fontSize:'0.85rem',color:'rgba(15,15,15,0.55)',lineHeight:1.65,marginBottom:'1.5rem'}}>{BEAT_OF_THE_WEEK.description}</p>
+              <div style={{display:'flex',gap:'0.75rem',flexWrap:'wrap'}}>
+                <a href={BEAT_OF_THE_WEEK.gumroadUrl} data-gumroad-single-product="true" style={{padding:'0.75rem 1.75rem',background:'#0f0f0f',color:'#f5f2ed',fontSize:'0.78rem',letterSpacing:'0.1em',textTransform:'uppercase',borderRadius:'2px',textDecoration:'none',fontWeight:600}}>Buy Now — {BEAT_OF_THE_WEEK.price}</a>
+                <button onClick={() => navigate(`/beats?play=${BEAT_OF_THE_WEEK.previewIndex}`)} style={{padding:'0.75rem 1.5rem',background:'transparent',color:'#0f0f0f',fontSize:'0.78rem',letterSpacing:'0.1em',textTransform:'uppercase',border:'0.5px solid rgba(15,15,15,0.25)',borderRadius:'2px',cursor:'pointer'}}>Preview</button>
+              </div>
             </div>
           </div>
         </div>
