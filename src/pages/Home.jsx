@@ -87,9 +87,6 @@ export default function Home() {
           <div className="bow-grid">
             <div className="bow-image" style={{borderRadius:'4px',aspectRatio:'1',backgroundImage:`url(${beatsImg})`,backgroundSize:'cover',backgroundPosition:'center',position:'relative'}}>
               <div style={{position:'absolute',inset:0,background:'rgba(10,10,10,0.3)',borderRadius:'4px'}}></div>
-              <div style={{position:'absolute',inset:0,display:'flex',alignItems:'center',justifyContent:'center',zIndex:1}}>
-                <div style={{fontFamily:"'Acids',sans-serif",fontSize:'5rem',color:'rgba(255,255,255,0.15)'}}>V</div>
-              </div>
             </div>
             <div className="bow-text">
               <div style={{display:'inline-block',fontSize:'0.65rem',letterSpacing:'0.14em',textTransform:'uppercase',padding:'0.3rem 0.75rem',background:'#b8933f',color:'#fff',borderRadius:'1px',marginBottom:'1rem',fontWeight:500}}>Most Popular</div>
